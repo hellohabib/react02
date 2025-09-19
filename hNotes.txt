@@ -1,0 +1,26 @@
+
+() বিভিন্ন দেশের পতাকা নিয়ে প্রজেক্ট
+() প্রথমে একটা রিয়াক্ট প্রজেক্ট তৈরী করতে হবে
+() এই প্রজেক্টে যে সব কম্পোনেন্ট ব্যবহার করা হবে সেগুলা অরগানাইজ করে রাখার জন্য..
+() রাখার জন্য... src ফোল্ডারের মধ্যে components নামে একটা ফোল্ডার তৈরী করব
+() এই  components ফোল্ডারের মধ্যে আবার Countries নামে আর একটা ফোল্ডার তৈরী করব
+() এই Countries ফোল্ডারের মধ্যে ফোল্ডারের মধ্যে Countries.jsx নামে একটা ফাইল তৈরী করে তাতে কম্পোনেন্ট লিখব
+() সহজে রিয়াক্ট কোড লেখার জন্য VS Code এর এক্সটেনশন React Extension Pack ইন্সটল করে নিয়ে rsc লিখে ট্যাব দিলে কম্পোনেন্ট এর একটা টেমপ্লেট তৈরী হবে
+
+
+
+…or create a new repository on the command line
+echo "# react02" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/hellohabib/react02.git
+git push -u origin main
+
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/hellohabib/react02.git
+git branch -M main
+git push -u origin main
