@@ -12,9 +12,20 @@ import './Countries.css';
 const Countries = ({ countriesInfoPromise }) => {
     // --(04)-- যে ফাইলে থেকে কম্পোনেন্ট কে কল করার জন্য props এর মাধ্যমে প্যারামিটার পাঠানো হল তা মেইন component ফাইলের মধ্যে Destructuring করা হল প্যারামিটারের মধ্যে {} দিয়ে
     const [visitedCountries, setVisitedCountries] = useState([]);
-    const handleVisitedCountries = (country) =>{
+        const handleVisitedCountries = (country) =>{
         //console.log(country)
-        
+        const newVisitedCountries = [...visitedCountries, country];
+        setVisitedCountries(newVisitedCountries);
+    }
+
+    const [visitedFlags, setVisitedFlags] = useState([]);
+    const handleVisitedFlag = (flag) => {
+
+        //console.log("add flag", flag);
+        const newVisitedFlags = [...visitedFlags, flag];
+        setVisitedFlags(newVisitedFlags);
+
+        //console.log(newVisitedFlags);
     }
 
     const countriesData = use(countriesInfoPromise);
@@ -25,7 +36,21 @@ const Countries = ({ countriesInfoPromise }) => {
     return (
         <div>
             <h3>মোট দেশের সংখ্যাঃ {countries.length}</h3>
-            <h2>ভিজিট করেছি এমন দেশের সংখ্যাঃ </h2>
+            <h2>ভিজিট করেছি এমন দেশের সংখ্যাঃ {visitedCountries.length}</h2>
+            <h3>Total visited flags: {visitedFlags.length}</h3>
+            <ol>
+                {
+                    visitedCountries.map(
+                        country=><li>{country.name.common}</li>
+                    )
+                }
+            </ol>
+            <div className="visited-flag-container">
+                {
+                    visitedFlags.map((flag, index)=><img key={index} src={flag} alt="" />)
+                }
+            </div>
+                            
             {/* --(07)-- এরের লেন্থ থেকে মোট দেশের সংখ্যা দেখালাম */}
             <div className='countries'>
                 {
@@ -33,7 +58,8 @@ const Countries = ({ countriesInfoPromise }) => {
                         <Country
                             key={country.cca3.cca3}
                             country={country}
-                            handleVisitedCountries = {handleVisitedCountries}
+                            handleVisitedCountries = {handleVisitedCountries} 
+                            handleVisitedFlag={handleVisitedFlag}
                         >
 
                         </Country>)
